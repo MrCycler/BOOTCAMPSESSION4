@@ -19,7 +19,7 @@ void config_uart0 (void){
 	GPIO_PORTA_DEN_R |= 0x03; // Habilitación PA0 y PA1 para señales digitales.
 }
 
-void txcar_uart0(uint32_t car){
+void txcar_uart0(uint8_t car){
 	while ((UART0_FR_R & UART_FR_TXFF)!=0); //Espera que esté disponible para transmitir
 	UART0_DR_R = car;
 }
